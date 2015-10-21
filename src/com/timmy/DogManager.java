@@ -16,8 +16,8 @@ public class DogManager {
         choice = printMenu();
         String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
-        while (choice != 4){
-            if (choice == 1){
+        while (choice != 4) {
+            if (choice == 1) {
                 System.out.println("Enter name of dog: ");
                 String dogName = scan.nextLine();
                 System.out.println("Enter name of owner: ");
@@ -30,17 +30,25 @@ public class DogManager {
                 makeSchedule(walk);
                 choice = printMenu();
 
-            } else if (choice == 2){
-                for (Dog dog : objectList) {
-                    System.out.println(dog.toString());
-                    walk = dog.getDaysToWalk();
-                    Dog.printSchedule(walk, days);
+            } else if (choice == 2) {
+                for (Dog dogs : objectList) {
+                    System.out.println(dogs.toString());
+//                    walk = dog.getDaysToWalk();
+//                    Dog.printSchedule(walk, days);
+                }
+
+                choice = printMenu();
+            } else if (choice == 3) {
+                for (int i = 0; i < days.length ; i++) {
+                    System.out.println(days[i]);
+                    for (Dog list : DogManager.objectList) {
+                        System.out.println("walk" + list);
+                        System.out.println(list.daysToWalk[i] +"times.");
+                    }
                 }
                 choice = printMenu();
-            } else if (choice == 3){
-                //TODO make method for remove client
-                int foo = 0;
-            } else {
+            }
+            else {
                 System.out.println("Exiting program.");
             }
         }

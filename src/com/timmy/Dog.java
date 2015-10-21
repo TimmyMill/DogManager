@@ -22,7 +22,7 @@ public class Dog {
         System.out.println("Pet-Walker LLC" + "\n" + "please make a selection below and press enter:");
         System.out.println("(1)Enter new client ");
         System.out.println("(2)View client info ");
-        System.out.println("(3)Remove Client ");
+        System.out.println("(3)View Schedule for the week ");
         System.out.println("(4)Quit program " + "\n:");
 
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -44,13 +44,6 @@ public class Dog {
             daysToWalk[i] = scan.nextInt();
         }
     }
-    public static void printSchedule(int[] daysToWalk, String[] days){
-        for (int i = 0; i < daysToWalk.length; i++) {
-            System.out.println(days[i]);
-            System.out.println(daysToWalk[i]);
-        }
-        System.out.println();
-    }
     //  get/set pet name
     public String getPetName(){return  this.petName;}
     public void setPetName(String newPet){this.petName = newPet;}
@@ -66,8 +59,24 @@ public class Dog {
 
     @Override
     public String toString() {
-        return "Pet name: " + this.petName + ", Owner(s): " + this.ownerName + ", Home address: " + this.homeAddress +
-                "\nScheduled days to walk: ";
+        return "Pet name: " + this.petName + ", Owner(s): " + this.ownerName + ", Home address: " + this.homeAddress;
     }
-
 }
+//        for (int i = 0; i < DogManager.objectList.size(); i++) {
+//            System.out.println(DogManager.objectList.get(i));
+//
+//        }
+//    }
+//        for (Dog dogs : DogManager.objectList) {
+//            System.out.println("Walk " + dogs.petName );
+//        }
+//            String dogName = dogs.getPetName();
+//            System.out.println("Walk" + dogName);
+
+    //    public static void printSchedule(int[] daysToWalk, String[] days){
+//        for (int i = 0; i < daysToWalk.length; i++) {
+//            System.out.println(days[i]);
+//            System.out.println(daysToWalk[i]);
+//        }
+//        System.out.println();
+//    }
